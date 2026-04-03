@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Tennr Question Bank — Part 1: DSA + JS</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#050709;--s:#0b0f18;--c:#111827;--b:#1e293b;--acc:#f59e0b;--blue:#3b82f6;--grn:#22c55e;--red:#ef4444;--pur:#8b5cf6;--t:#f1f5f9;--sub:#94a3b8;--mut:#475569}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--t);line-height:1.7;padding:0 0 60px}
+.hero{text-align:center;padding:48px 20px 36px;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(239,68,68,.2),transparent 70%)}
+.hero h1{font-size:clamp(1.6rem,4vw,2.6rem);font-weight:900;background:linear-gradient(135deg,#fff,#fca5a5);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{color:var(--sub);margin-top:8px}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+.cat{margin-top:40px}
+.cat-title{font-size:1.15rem;font-weight:800;display:flex;align-items:center;gap:10px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--b)}
+.q{background:var(--c);border:1px solid var(--b);border-radius:12px;margin-bottom:12px;overflow:hidden}
+.q-head{padding:14px 18px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:.9rem}
+.q-head:hover{background:rgba(255,255,255,.03)}
+.q-tag{font-size:10px;padding:2px 10px;border-radius:100px;font-weight:700;text-transform:uppercase;flex-shrink:0;margin-left:10px}
+.t-hot{background:rgba(239,68,68,.2);color:#fca5a5}
+.t-med{background:rgba(245,158,11,.2);color:#fcd34d}
+.t-ez{background:rgba(34,197,94,.2);color:#86efac}
+.q-body{display:none;padding:0 18px 16px;font-size:13.5px;color:var(--sub);border-top:1px solid var(--b)}
+.q-body.open{display:block}
+.q-body pre{background:var(--s);border:1px solid var(--b);border-radius:8px;padding:14px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#c9d1d9;margin:10px 0;line-height:1.8}
+.q-body ul{margin:8px 0 8px 20px}
+.q-body strong{color:var(--t)}
+.ans{color:#86efac;font-weight:600}
+.opt{margin:6px 0 6px 16px;line-height:2}
+nav{position:sticky;top:0;z-index:99;background:rgba(5,7,9,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--b);padding:10px 20px;display:flex;gap:6px;flex-wrap:wrap}
+nav a{font-size:12px;color:var(--mut);text-decoration:none;padding:5px 12px;border-radius:7px;font-weight:500}
+nav a:hover{color:var(--t);background:var(--c)}
+.nav-b{font-weight:900;color:var(--red);margin-right:8px;font-size:13px}
+</style>
+</head>
+<body>
+<nav><span class="nav-b">📋 Part 1</span><a href="code.txt" target="_blank" rel="noopener">📄 code.txt</a><a href="#dsa-mcq">DSA MCQ</a><a href="#dsa-code">DSA Coding</a><a href="#js-mcq">JS MCQ</a><a href="#js-output">JS Output</a><a href="tennr-questions-part2.html">→ Part 2</a><a href="tennr-questions-part3.html">→ Part 3 (NEW)</a></nav>
+<div class="hero"><h1>🔥 Tennr Question Bank</h1><p>Part 1: DSA + JavaScript · Click any question to reveal the answer</p></div>
+<div class="wrap">
+
+<!-- DSA MCQ -->
+<div class="cat" id="dsa-mcq"><div class="cat-title">🧠 DSA — MCQ Questions (30+)</div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q1. What is the time complexity of binary search? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<div class="opt">a) O(n) &nbsp; b) O(n²) &nbsp; c) O(log n) &nbsp; d) O(n log n)</div>
+<p class="ans">✅ Answer: c) O(log n)</p>
+<p>Binary search halves the search space each step → log₂(n) comparisons.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q2. Which data structure uses FIFO ordering?</div><div class="q-body">
+<div class="opt">a) Stack &nbsp; b) Queue &nbsp; c) Tree &nbsp; d) Graph</div>
+<p class="ans">✅ Answer: b) Queue</p>
+<p>Queue = First In First Out. Stack = Last In First Out (LIFO).</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q3. Which data structure is used for BFS traversal? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<div class="opt">a) Stack &nbsp; b) Queue &nbsp; c) Heap &nbsp; d) Linked List</div>
+<p class="ans">✅ Answer: b) Queue</p>
+<p>BFS uses a Queue. DFS uses a Stack (or recursion).</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q4. What causes a stack overflow?</div><div class="q-body">
+<p class="ans">✅ Answer: Infinite recursion or very deep recursion exceeding call stack size.</p>
+<p>Each recursive call adds a frame to the call stack. If there's no base case or recursion is too deep, the stack memory is exhausted.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q5. Which sorting algorithm is stable? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<div class="opt">a) Quick Sort &nbsp; b) Heap Sort &nbsp; c) Merge Sort &nbsp; d) Selection Sort</div>
+<p class="ans">✅ Answer: c) Merge Sort</p>
+<p>Stable sort = equal elements maintain their original order. Merge Sort is stable. Quick Sort and Heap Sort are NOT stable.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q6. Best case time complexity of Quick Sort?</div><div class="q-body">
+<div class="opt">a) O(n) &nbsp; b) O(n log n) &nbsp; c) O(n²) &nbsp; d) O(log n)</div>
+<p class="ans">✅ Answer: b) O(n log n)</p>
+<p>Best/Average: O(n log n). Worst case (already sorted, bad pivot): O(n²).</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q7. Average time complexity of HashMap get/put?</div><div class="q-body">
+<div class="opt">a) O(n) &nbsp; b) O(log n) &nbsp; c) O(1) &nbsp; d) O(n log n)</div>
+<p class="ans">✅ Answer: c) O(1) — amortized</p>
+<p>HashMap uses hashing for O(1) average. Worst case O(n) due to collisions.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q8. What is amortized time complexity?</div><div class="q-body">
+<p class="ans">✅ The average time per operation over a worst-case sequence of operations.</p>
+<p>Example: ArrayList/dynamic array doubling — single resize is O(n), but averaged over n insertions it's O(1) per insert.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q9. Difference between Array and Linked List? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<ul>
+<li><strong>Array:</strong> Contiguous memory, O(1) access by index, O(n) insert/delete</li>
+<li><strong>Linked List:</strong> Non-contiguous, O(n) access, O(1) insert/delete at head</li>
+<li>Array has better cache performance. LL has dynamic size.</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q10. What is the height of a balanced BST with n nodes?</div><div class="q-body">
+<p class="ans">✅ O(log n)</p>
+<p>A balanced BST ensures left and right subtrees differ in height by at most 1 → height is log₂(n).</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q11. Inorder traversal of a BST gives?</div><div class="q-body">
+<p class="ans">✅ Sorted (ascending) order</p>
+<p>Inorder: Left → Root → Right. For BST, this always produces sorted output.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q12. Which data structure is best for implementing an undo feature?</div><div class="q-body">
+<p class="ans">✅ Stack</p>
+<p>Each action is pushed. Undo = pop the last action. LIFO perfectly models undo.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q13. What is the worst-case time for searching in an unsorted array?</div><div class="q-body">
+<p class="ans">✅ O(n) — linear search</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q14. Difference between DFS and BFS? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<ul>
+<li><strong>DFS:</strong> Goes deep first. Uses Stack/recursion. Less memory for narrow graphs.</li>
+<li><strong>BFS:</strong> Goes level by level. Uses Queue. Finds shortest path in unweighted graphs.</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q15. What is a collision in hashing? How to handle it?</div><div class="q-body">
+<p class="ans">✅ When two different keys produce the same hash index.</p>
+<ul>
+<li><strong>Chaining:</strong> Store multiple elements at same index using linked list</li>
+<li><strong>Open Addressing:</strong> Find next empty slot (linear probing, quadratic probing)</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q16. Difference between Stack and Queue?</div><div class="q-body">
+<ul>
+<li><strong>Stack:</strong> LIFO — push/pop from top only</li>
+<li><strong>Queue:</strong> FIFO — enqueue at rear, dequeue from front</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q17. What is a Priority Queue?</div><div class="q-body">
+<p class="ans">✅ A queue where elements are dequeued based on priority, not insertion order.</p>
+<p>Usually implemented using a Heap. Min-Heap: smallest priority first. Max-Heap: largest first.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q18. Time complexity of inserting at the beginning of an ArrayList vs LinkedList?</div><div class="q-body">
+<ul>
+<li><strong>ArrayList:</strong> O(n) — must shift all elements</li>
+<li><strong>LinkedList:</strong> O(1) — just change head pointer</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q19. What is a complete binary tree?</div><div class="q-body">
+<p class="ans">✅ All levels fully filled except possibly the last, which is filled left to right.</p>
+<p>A heap is always a complete binary tree.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q20. What is the space complexity of merge sort?</div><div class="q-body">
+<p class="ans">✅ O(n)</p>
+<p>Merge sort needs extra space for temporary arrays during merging.</p>
+</div></div>
+
+</div>
+
+<!-- DSA CODING -->
+<div class="cat" id="dsa-code"><div class="cat-title">💻 DSA — Coding Problems (Reported in Tennr + AccioJob)</div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">C1. Two Sum (LeetCode #1) <span class="q-tag t-hot">CONFIRMED</span></div><div class="q-body">
+<p>Given array nums and target, return indices of two numbers that add up to target.</p>
+<pre>function twoSum(nums, target) {
+  const map = new Map();
+  for (let i = 0; i &lt; nums.length; i++) {
+    const complement = target - nums[i];
+    if (map.has(complement)) return [map.get(complement), i];
+    map.set(nums[i], i);
+  }
+}
+// Time: O(n), Space: O(n)</pre>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">C2. Valid Parentheses (LeetCode #20) <span class="q-tag t-hot">CONFIRMED TENNR</span></div><div class="q-body">
+<p>Check if bracket string is valid. Tennr adds variations with &lt;&gt; and || brackets.</p>
+<pre>function isValid(s) {
+  const stack = [];
+  const map = { ')':'(', '}':'{', ']':'[' };
+  for (const c of s) {
+    if ('({['.includes(c)) stack.push(c);
+    else if (stack.pop() !== map[c]) return false;
+  }
+  return stack.length === 0;
+}
+// Time: O(n), Space: O(n)</pre>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">C3. Top K Frequent Elements (LeetCode #347) <span class="q-tag t-hot">CONFIRMED TENNR</span></div><div class="q-body">
+<p>Return the k most frequent elements from an array.</p>
+<pre>function topKFrequent(nums, k) {
+  const freq = {};
+  for (const n of nums) freq[n] = (freq[n] || 0) + 1;
+  // Bucket sort approach
+  const buckets = Array.from({length: nums.length + 1}, () =&gt; []);
+  for (const [num, count] of Object.entries(freq)) {
+    buckets[count].push(Number(num));
+  }
+  const result = [];
+  for (let i = buckets.length - 1; i &gt;= 0 &amp;&amp; result.length &lt; k; i--) {
+    result.push(...buckets[i]);
+  }
+  return result.slice(0, k);
+}
+// Time: O(n), Space: O(n)</pre>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">C4. Maximum Subarray — Kadane's (LeetCode #53) <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<pre>function maxSubArray(nums) {
+  let maxSoFar = nums[0], maxEndingHere = nums[0];
+  for (let i = 1; i &lt; nums.length; i++) {
+    maxEndingHere = Math.max(nums[i], maxEndingHere + nums[i]);
+    maxSoFar = Math.max(maxSoFar, maxEndingHere);
+  }
+  return maxSoFar;
+}
+// Time: O(n), Space: O(1)</pre>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">C5. Reverse a Linked List (LeetCode #206) <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<pre>function reverseList(head) {
+  let prev = null, curr = head;
+  while (curr) {
+    const next = curr.next;
+    curr.next = prev;
+    prev = curr;
+    curr = next;
+  }
+  return prev;
+}
+// Time: O(n), Space: O(1)</pre>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">C6. Best Time to Buy and Sell Stock (LeetCode #121)</div><div class="q-body">
+<pre>function maxProfit(prices) {
+  let minPrice = Infinity, maxProfit = 0;
+  for (const price of prices) {
+    minPrice = Math.min(minPrice, price);
+    maxProfit = Math.max(maxProfit, price - minPrice);
+  }
+  return maxProfit;
+}
+// Time: O(n), Space: O(1)</pre>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">C7. Valid Anagram (LeetCode #242)</div><div class="q-body">
+<pre>function isAnagram(s, t) {
+  if (s.length !== t.length) return false;
+  const count = {};
+  for (const c of s) count[c] = (count[c] || 0) + 1;
+  for (const c of t) {
+    if (!count[c]) return false;
+    count[c]--;
+  }
+  return true;
+}
+// Time: O(n), Space: O(1) — fixed 26 chars</pre>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">C8. Binary Search (LeetCode #704)</div><div class="q-body">
+<pre>function search(nums, target) {
+  let l = 0, r = nums.length - 1;
+  while (l &lt;= r) {
+    const mid = l + Math.floor((r - l) / 2);
+    if (nums[mid] === target) return mid;
+    else if (nums[mid] &lt; target) l = mid + 1;
+    else r = mid - 1;
+  }
+  return -1;
+}
+// Time: O(log n), Space: O(1)</pre>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">C9. Detect Cycle in Linked List (LeetCode #141)</div><div class="q-body">
+<pre>function hasCycle(head) {
+  let slow = head, fast = head;
+  while (fast &amp;&amp; fast.next) {
+    slow = slow.next;
+    fast = fast.next.next;
+    if (slow === fast) return true;
+  }
+  return false;
+}
+// Floyd's Tortoise & Hare — O(n) time, O(1) space</pre>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">C10. Group Anagrams (LeetCode #49) <span class="q-tag t-med">REPORTED</span></div><div class="q-body">
+<pre>function groupAnagrams(strs) {
+  const map = {};
+  for (const s of strs) {
+    const key = s.split('').sort().join('');
+    if (!map[key]) map[key] = [];
+    map[key].push(s);
+  }
+  return Object.values(map);
+}
+// Time: O(n * k log k), Space: O(n)</pre>
+</div></div>
+
+</div>
+
+<!-- JS MCQ -->
+<div class="cat" id="js-mcq"><div class="cat-title">⚡ JavaScript — MCQ Questions (25+)</div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q1. What is the difference between == and ===? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<p class="ans">✅ == does type coercion before comparison. === checks both value AND type (strict).</p>
+<pre>"5" == 5   // true (coerces string to number)
+"5" === 5  // false (different types)</pre>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q2. What is hoisting in JavaScript? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<p class="ans">✅ Variable and function declarations are moved to the top of their scope during compilation.</p>
+<ul>
+<li><strong>var:</strong> hoisted and initialized as undefined</li>
+<li><strong>let/const:</strong> hoisted but NOT initialized (Temporal Dead Zone — ReferenceError if accessed before declaration)</li>
+<li><strong>function declarations:</strong> fully hoisted (can call before declaration)</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q3. What is a closure? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<p class="ans">✅ A function that retains access to its outer (lexical) scope variables even after the outer function returns.</p>
+<pre>function outer() {
+  let count = 0;
+  return function inner() { return ++count; };
+}
+const fn = outer();
+fn(); // 1
+fn(); // 2  — count persists via closure</pre>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q4. Difference between var, let, const? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<ul>
+<li><strong>var:</strong> function-scoped, hoisted (undefined), can redeclare</li>
+<li><strong>let:</strong> block-scoped, hoisted (TDZ), can reassign, no redeclare</li>
+<li><strong>const:</strong> block-scoped, hoisted (TDZ), cannot reassign, must initialize</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q5. What is the event loop? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<p class="ans">✅ Mechanism that handles async operations in single-threaded JS.</p>
+<p>Call Stack → Web APIs → Task Queue / Microtask Queue → Event Loop checks if stack is empty, then pushes next task. Microtasks (Promises) run before Macrotasks (setTimeout).</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q6. What is the output? setTimeout(() => console.log(1), 0); Promise.resolve().then(() => console.log(2)); console.log(3); <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<p class="ans">✅ Output: 3, 2, 1</p>
+<p>3 (sync) → 2 (microtask/Promise) → 1 (macrotask/setTimeout)</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q7. What is a Promise?</div><div class="q-body">
+<p class="ans">✅ An object representing the eventual completion (or failure) of an async operation.</p>
+<p>States: Pending → Fulfilled / Rejected. Use .then() for success, .catch() for error, .finally() for cleanup.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q8. Difference between null and undefined?</div><div class="q-body">
+<ul>
+<li><strong>undefined:</strong> Variable declared but not assigned. JS engine sets it.</li>
+<li><strong>null:</strong> Intentional absence of value. Programmer sets it.</li>
+<li>typeof undefined → "undefined". typeof null → "object" (JS bug).</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q9. What does Array.map() do vs forEach()?</div><div class="q-body">
+<ul>
+<li><strong>map():</strong> Returns a NEW array with transformed elements</li>
+<li><strong>forEach():</strong> Executes function on each element, returns undefined</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q10. What is 'this' in JavaScript? <span class="q-tag t-med">IMP</span></div><div class="q-body">
+<ul>
+<li>Global context: window (browser) / global (Node)</li>
+<li>Object method: the object calling the method</li>
+<li>Arrow function: inherits from enclosing scope (lexical)</li>
+<li>Constructor (new): the newly created object</li>
+<li>call/apply/bind: explicitly set</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q11. What is event delegation?</div><div class="q-body">
+<p class="ans">✅ Attaching a single event listener to a parent element to handle events on child elements via event bubbling.</p>
+<p>Benefits: fewer listeners, works for dynamically added elements.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q12. What is the spread operator (...)?</div><div class="q-body">
+<p class="ans">✅ Expands an iterable into individual elements.</p>
+<pre>const arr = [1, 2, 3];
+const copy = [...arr];       // shallow copy
+const merged = [...arr, 4];  // [1,2,3,4]
+const obj = {...{a:1}, b:2}; // {a:1, b:2}</pre>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q13. What is destructuring?</div><div class="q-body">
+<pre>const [a, b] = [1, 2];              // a=1, b=2
+const {name, age} = {name:'X', age:20}; // name='X'</pre>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q14. Difference between arrow function and regular function?</div><div class="q-body">
+<ul>
+<li>Arrow: no own 'this', no 'arguments' object, cannot be used as constructor</li>
+<li>Regular: has own 'this', has 'arguments', can be constructor</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q15. What is callback hell? How to solve it?</div><div class="q-body">
+<p class="ans">✅ Deeply nested callbacks making code hard to read ("pyramid of doom").</p>
+<p>Solutions: Promises → async/await → modularizing functions.</p>
+</div></div>
+
+</div>
+
+<!-- JS OUTPUT -->
+<div class="cat" id="js-output"><div class="cat-title">🔍 JavaScript — Output-Based Questions</div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">O1. What is the output?<br><code>console.log(typeof null)</code></div><div class="q-body">
+<p class="ans">✅ "object" — this is a known bug in JavaScript since its first version.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">O2. What is the output?<br><code>console.log(1 + "2" + "2")</code></div><div class="q-body">
+<p class="ans">✅ "122" — 1+"2" = "12" (coercion), then "12"+"2" = "122"</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">O3. What is the output?<br><code>console.log("5" - 3)</code></div><div class="q-body">
+<p class="ans">✅ 2 — minus operator coerces string to number</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">O4. for(var i=0; i&lt;3; i++) { setTimeout(()=>console.log(i), 0) }</div><div class="q-body">
+<p class="ans">✅ 3, 3, 3 — var is function-scoped, all closures share same i. Use let to get 0,1,2.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">O5. console.log([] == false)</div><div class="q-body">
+<p class="ans">✅ true — [] is coerced to "" then to 0. false is coerced to 0. 0 == 0 is true.</p>
+</div></div>
+
+</div>
+
+<div style="text-align:center;margin:40px 0">
+<a href="tennr-questions-part2.html" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);border-radius:12px;color:#fff;text-decoration:none;font-weight:700;font-size:1rem">→ Continue to Part 2: OOP + SQL + HTML/CSS + Aptitude →</a>
+</div>
+</div>
+</body></html>

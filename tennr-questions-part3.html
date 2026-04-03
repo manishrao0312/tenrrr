@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Tennr Question Bank — Part 3: Pseudo Code + Subjective + Resume Prep</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#050709;--s:#0b0f18;--c:#111827;--b:#1e293b;--acc:#f59e0b;--blue:#3b82f6;--grn:#22c55e;--red:#ef4444;--pur:#8b5cf6;--cyan:#06b6d4;--t:#f1f5f9;--sub:#94a3b8;--mut:#475569}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--t);line-height:1.7;padding:0 0 60px}
+.hero{text-align:center;padding:48px 20px 36px;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(6,182,212,.2),transparent 70%)}
+.hero h1{font-size:clamp(1.6rem,4vw,2.6rem);font-weight:900;background:linear-gradient(135deg,#fff,#67e8f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{color:var(--sub);margin-top:8px}
+.hero .round-tags{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.hero .rtag{font-size:12px;font-weight:700;padding:5px 14px;border-radius:100px;text-transform:uppercase;letter-spacing:.8px}
+.rtag-r1{background:rgba(239,68,68,.15);color:#fca5a5;border:1px solid rgba(239,68,68,.3)}
+.rtag-r3{background:rgba(59,130,246,.15);color:#93c5fd;border:1px solid rgba(59,130,246,.3)}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+.cat{margin-top:40px}
+.cat-title{font-size:1.15rem;font-weight:800;display:flex;align-items:center;gap:10px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--b)}
+.cat-sub{font-size:13px;color:var(--mut);margin-bottom:18px;padding:10px 14px;background:var(--s);border-radius:8px;border-left:3px solid var(--cyan)}
+.q{background:var(--c);border:1px solid var(--b);border-radius:12px;margin-bottom:12px;overflow:hidden}
+.q-head{padding:14px 18px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:.9rem}
+.q-head:hover{background:rgba(255,255,255,.03)}
+.q-tag{font-size:10px;padding:2px 10px;border-radius:100px;font-weight:700;text-transform:uppercase;flex-shrink:0;margin-left:10px}
+.t-hot{background:rgba(239,68,68,.2);color:#fca5a5}
+.t-med{background:rgba(245,158,11,.2);color:#fcd34d}
+.t-ez{background:rgba(34,197,94,.2);color:#86efac}
+.t-new{background:rgba(6,182,212,.2);color:#67e8f9}
+.q-body{display:none;padding:0 18px 16px;font-size:13.5px;color:var(--sub);border-top:1px solid var(--b)}
+.q-body.open{display:block}
+.q-body pre{background:var(--s);border:1px solid var(--b);border-radius:8px;padding:14px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#c9d1d9;margin:10px 0;line-height:1.8}
+.q-body ul{margin:8px 0 8px 20px}
+.q-body strong{color:var(--t)}
+.ans{color:#86efac;font-weight:600}
+.opt{margin:6px 0 6px 16px;line-height:2}
+nav{position:sticky;top:0;z-index:99;background:rgba(5,7,9,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--b);padding:10px 20px;display:flex;gap:6px;flex-wrap:wrap}
+nav a{font-size:12px;color:var(--mut);text-decoration:none;padding:5px 12px;border-radius:7px;font-weight:500}
+nav a:hover{color:var(--t);background:var(--c)}
+.nav-b{font-weight:900;color:var(--cyan);margin-right:8px;font-size:13px}
+.alert-box{padding:16px 18px;border-radius:12px;margin-bottom:20px;font-size:13.5px;line-height:1.7;display:flex;gap:12px;align-items:flex-start}
+.alert-warn{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.3)}
+.alert-info{background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.3)}
+.alert-icon{font-size:20px;flex-shrink:0}
+.resume-card{background:var(--c);border:1px solid var(--b);border-radius:14px;padding:20px;margin-bottom:14px}
+.resume-card h3{font-size:1rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.resume-card ul{margin:0 0 0 18px;font-size:13.5px;color:var(--sub);line-height:2}
+.resume-card .do{color:#86efac}
+.resume-card .dont{color:#fca5a5}
+.score-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:14px}
+.score-item{background:var(--s);border:1px solid var(--b);border-radius:10px;padding:14px;text-align:center}
+.score-item .val{font-size:1.6rem;font-weight:800;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.score-item .lbl{font-size:12px;color:var(--mut);margin-top:4px}
+</style>
+</head>
+<body>
+<nav><span class="nav-b">📋 Part 3</span><a href="index.html">← Part 1</a><a href="tennr-questions-part2.html">← Part 2</a><a href="#pseudo">Pseudo Code</a><a href="#subjective">Subjective</a><a href="#resume">Resume Prep</a><a href="#resume-template">Template</a></nav>
+<div class="hero">
+<h1>🎯 Tennr Question Bank</h1>
+<p>Part 3: Pseudo Code + Subjective Questions + Resume Evaluation Prep</p>
+<div class="round-tags">
+<span class="rtag rtag-r1">Round 1 · Offline Assessment</span>
+<span class="rtag rtag-r3">Round 3 · Resume Evaluation</span>
+</div>
+</div>
+<div class="wrap">
+
+<div class="alert-box alert-info">
+<span class="alert-icon">💡</span>
+<div><strong style="color:var(--t)">Why Part 3?</strong> Parts 1 & 2 cover MCQ + Coding. But the offline test also includes <strong style="color:#67e8f9">Pseudo Code</strong> and <strong style="color:#67e8f9">Subjective (written)</strong> questions. This page covers those gaps + full Resume Evaluation prep.</div>
+</div>
+
+<!-- PSEUDO CODE -->
+<div class="cat" id="pseudo"><div class="cat-title">🔀 Pseudo Code — Trace & Output Questions (20+)</div>
+<div class="cat-sub">These questions give you pseudo code (not in any specific language) and ask you to trace through it to find the output. Common in AccioJob offline assessments.</div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">P1. What is the output? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<pre>x = 5
+y = 3
+z = x + y * 2
+PRINT z</pre>
+<p class="ans">✅ Output: 11</p>
+<p>Multiplication has higher precedence: y*2 = 6, then x+6 = 11.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">P2. What is the output of this loop? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<pre>sum = 0
+FOR i = 1 TO 5
+    IF i MOD 2 == 0 THEN
+        sum = sum + i
+    END IF
+END FOR
+PRINT sum</pre>
+<p class="ans">✅ Output: 6</p>
+<p>Even numbers 1-5: 2 + 4 = 6</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">P3. What does this function return? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<pre>FUNCTION mystery(n)
+    IF n <= 1 THEN RETURN n
+    RETURN mystery(n-1) + mystery(n-2)
+END FUNCTION
+PRINT mystery(6)</pre>
+<p class="ans">✅ Output: 8</p>
+<p>This is the Fibonacci sequence: 0,1,1,2,3,5,<strong>8</strong>. mystery(6) = 8.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">P4. What is the output? <span class="q-tag t-med">IMP</span></div><div class="q-body">
+<pre>arr = [3, 1, 4, 1, 5]
+count = 0
+FOR i = 0 TO LENGTH(arr)-1
+    FOR j = i+1 TO LENGTH(arr)-1
+        IF arr[i] > arr[j] THEN
+            count = count + 1
+        END IF
+    END FOR
+END FOR
+PRINT count</pre>
+<p class="ans">✅ Output: 4</p>
+<p>Counts inversions (pairs where left > right): (3,1),(3,1),(4,1),(4,1) → 4 inversions.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">P5. What does this print? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<pre>a = 10
+b = 20
+a = a + b    // a=30
+b = a - b    // b=10
+a = a - b    // a=20
+PRINT a, b</pre>
+<p class="ans">✅ Output: 20, 10</p>
+<p>Classic swap without a temp variable. a and b are swapped.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">P6. What is the final value of result?</div><div class="q-body">
+<pre>result = 1
+n = 5
+WHILE n > 0
+    result = result * n
+    n = n - 1
+END WHILE
+PRINT result</pre>
+<p class="ans">✅ Output: 120</p>
+<p>This computes factorial: 5! = 5×4×3×2×1 = 120</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">P7. Trace through this — what prints? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<pre>FUNCTION foo(arr)
+    n = LENGTH(arr)
+    FOR i = 0 TO n-2
+        FOR j = 0 TO n-i-2
+            IF arr[j] > arr[j+1] THEN
+                SWAP arr[j], arr[j+1]
+            END IF
+        END FOR
+    END FOR
+    RETURN arr
+END FUNCTION
+PRINT foo([5, 3, 1, 4, 2])</pre>
+<p class="ans">✅ Output: [1, 2, 3, 4, 5]</p>
+<p>This is <strong>Bubble Sort</strong>. Recognize the nested loop + swap pattern.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">P8. What is the output?</div><div class="q-body">
+<pre>s = "HELLO"
+result = ""
+FOR i = LENGTH(s)-1 DOWNTO 0
+    result = result + s[i]
+END FOR
+PRINT result</pre>
+<p class="ans">✅ Output: "OLLEH"</p>
+<p>Reverses the string by iterating backwards.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">P9. What does this return? <span class="q-tag t-med">IMP</span></div><div class="q-body">
+<pre>FUNCTION search(arr, target)
+    low = 0
+    high = LENGTH(arr) - 1
+    WHILE low <= high
+        mid = (low + high) / 2
+        IF arr[mid] == target THEN RETURN mid
+        ELSE IF arr[mid] < target THEN low = mid + 1
+        ELSE high = mid - 1
+    END WHILE
+    RETURN -1
+END FUNCTION
+PRINT search([2,5,8,12,16,23,38,56,72], 23)</pre>
+<p class="ans">✅ Output: 5</p>
+<p>This is <strong>Binary Search</strong>. 23 is at index 5.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">P10. What is printed? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<pre>stack = []
+PUSH(stack, 10)
+PUSH(stack, 20)
+PUSH(stack, 30)
+POP(stack)
+PUSH(stack, 40)
+PRINT TOP(stack)
+PRINT LENGTH(stack)</pre>
+<p class="ans">✅ Output: 40, 3</p>
+<p>After operations: [10, 20, 40]. Top is 40, length is 3.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">P11. What does this recursive function do?</div><div class="q-body">
+<pre>FUNCTION power(base, exp)
+    IF exp == 0 THEN RETURN 1
+    RETURN base * power(base, exp - 1)
+END FUNCTION
+PRINT power(2, 10)</pre>
+<p class="ans">✅ Output: 1024</p>
+<p>Computes base^exp recursively. 2^10 = 1024.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">P12. What is the output? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<pre>x = 1
+FOR i = 1 TO 4
+    FOR j = 1 TO i
+        PRINT x
+        x = x + 1
+    END FOR
+    PRINT NEWLINE
+END FOR</pre>
+<p class="ans">✅ Output:<br>1<br>2 3<br>4 5 6<br>7 8 9 10</p>
+<p>Triangle number pattern. Inner loop runs i times.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">P13. What value does count hold?</div><div class="q-body">
+<pre>str = "aabbccaab"
+count = 0
+FOR i = 0 TO LENGTH(str)-1
+    IF str[i] == 'a' THEN
+        count = count + 1
+    END IF
+END FOR
+PRINT count</pre>
+<p class="ans">✅ Output: 4</p>
+<p>Counts occurrences of 'a': positions 0,1,6,7 → 4.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">P14. What does this print? <span class="q-tag t-med">IMP</span></div><div class="q-body">
+<pre>FUNCTION gcd(a, b)
+    IF b == 0 THEN RETURN a
+    RETURN gcd(b, a MOD b)
+END FUNCTION
+PRINT gcd(48, 18)</pre>
+<p class="ans">✅ Output: 6</p>
+<p>Euclidean algorithm: gcd(48,18) → gcd(18,12) → gcd(12,6) → gcd(6,0) → 6</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">P15. What does this check?</div><div class="q-body">
+<pre>FUNCTION check(n)
+    IF n <= 1 THEN RETURN FALSE
+    FOR i = 2 TO SQRT(n)
+        IF n MOD i == 0 THEN RETURN FALSE
+    END FOR
+    RETURN TRUE
+END FUNCTION
+PRINT check(17), check(15)</pre>
+<p class="ans">✅ Output: TRUE, FALSE</p>
+<p>This is a <strong>prime number check</strong>. 17 is prime, 15 is not (divisible by 3,5).</p>
+</div></div>
+
+</div>
+
+<!-- SUBJECTIVE -->
+<div class="cat" id="subjective"><div class="cat-title">📝 Subjective / Written Answer Questions (15+)</div>
+<div class="cat-sub">Short-answer questions that may appear in the offline assessment. Write 3-5 clear sentences.</div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">S1. Explain the difference between a stack and a queue with real-world examples. <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<p class="ans">✅ Model Answer:</p>
+<p>A <strong>Stack</strong> follows LIFO (Last In, First Out) — like a pile of plates. The last plate placed on top is the first removed. Used in: undo operations, browser back button, function call stack.</p>
+<p>A <strong>Queue</strong> follows FIFO (First In, First Out) — like a line at a ticket counter. The first person in line gets served first. Used in: print queue, BFS traversal, task scheduling.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">S2. What is the difference between an array and a linked list? When would you use each? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<p class="ans">✅ Model Answer:</p>
+<p><strong>Array:</strong> Contiguous memory, O(1) random access by index, fixed size (in most languages), O(n) insertion/deletion. Better cache performance. Use when you need fast lookups and know the size.</p>
+<p><strong>Linked List:</strong> Non-contiguous nodes connected by pointers, O(n) access, dynamic size, O(1) insert/delete at head. Use when frequent insertions/deletions are needed and size is unknown.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">S3. Explain the concept of time complexity. Why is it important? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<p class="ans">✅ Model Answer:</p>
+<p>Time complexity measures how the runtime of an algorithm grows as the input size increases. We use Big-O notation (e.g., O(n), O(log n), O(n²)) to classify this growth rate. It's independent of hardware — it describes the algorithm's efficiency. It's important because it helps us choose the best algorithm for large inputs. An O(n²) solution might work for 100 elements but fail for 1 million.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">S4. What is OOP? Explain any two pillars with examples. <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<p class="ans">✅ Model Answer:</p>
+<p><strong>OOP</strong> (Object-Oriented Programming) organizes code into objects that combine data and behavior. The 4 pillars are Encapsulation, Abstraction, Inheritance, Polymorphism.</p>
+<p><strong>Encapsulation:</strong> Bundling data + methods into a class and restricting direct access. Example: A BankAccount class with private balance, accessible only via deposit()/withdraw() methods.</p>
+<p><strong>Inheritance:</strong> A child class inherits properties from a parent class, promoting code reuse. Example: A Dog class inherits from Animal class and adds bark() method.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">S5. What is normalization in databases? Explain 1NF, 2NF, 3NF. <span class="q-tag t-med">IMP</span></div><div class="q-body">
+<p class="ans">✅ Model Answer:</p>
+<p>Normalization organizes database tables to reduce redundancy and ensure data integrity.</p>
+<ul>
+<li><strong>1NF:</strong> Each cell contains a single atomic value. No repeating groups or arrays.</li>
+<li><strong>2NF:</strong> Meets 1NF + every non-key column depends on the entire primary key (no partial dependency).</li>
+<li><strong>3NF:</strong> Meets 2NF + no transitive dependency (non-key columns depend only on the primary key, not on other non-key columns).</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">S6. What is a closure in JavaScript? Give an example. <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<p class="ans">✅ Model Answer:</p>
+<p>A closure is a function that remembers and can access variables from its outer (lexical) scope even after the outer function has returned. This happens because JS functions retain a reference to their creation environment.</p>
+<pre>function counter() {
+  let count = 0;
+  return function() { return ++count; };
+}
+const inc = counter();
+inc(); // 1
+inc(); // 2 — count persists via closure</pre>
+<p>Use cases: data privacy, factory functions, event handlers.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">S7. Explain the difference between SQL and NoSQL databases. <span class="q-tag t-med">IMP</span></div><div class="q-body">
+<p class="ans">✅ Model Answer:</p>
+<p><strong>SQL databases</strong> (MySQL, PostgreSQL) are relational — data stored in structured tables with predefined schemas. They support complex queries, JOINs, and ACID transactions. Best for structured data with relationships.</p>
+<p><strong>NoSQL databases</strong> (MongoDB, Redis) are non-relational — flexible schema, can store documents, key-value pairs, graphs. They scale horizontally and handle unstructured/semi-structured data well. Best for high-scale, rapidly changing data models.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">S8. What is the event loop in JavaScript? How does it work?</div><div class="q-body">
+<p class="ans">✅ Model Answer:</p>
+<p>JavaScript is single-threaded. The event loop enables async behavior by managing the call stack, Web APIs, callback/task queue, and microtask queue. When async operations (setTimeout, fetch) complete, their callbacks go to the task queue. The event loop checks: if the call stack is empty, it moves the next task from the queue to the stack. Microtasks (Promises) are prioritized over macrotasks (setTimeout).</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">S9. Write a short note on ACID properties in databases. <span class="q-tag t-med">IMP</span></div><div class="q-body">
+<p class="ans">✅ Model Answer:</p>
+<ul>
+<li><strong>Atomicity:</strong> Transaction is all-or-nothing. If any part fails, entire transaction rolls back.</li>
+<li><strong>Consistency:</strong> Database goes from one valid state to another. All constraints are satisfied.</li>
+<li><strong>Isolation:</strong> Concurrent transactions don't interfere with each other.</li>
+<li><strong>Durability:</strong> Once committed, data persists even after system crash (saved to disk).</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">S10. What is REST API? What are HTTP methods?</div><div class="q-body">
+<p class="ans">✅ Model Answer:</p>
+<p>REST (Representational State Transfer) is an architectural style for designing web APIs. It uses standard HTTP methods to perform CRUD operations on resources identified by URLs.</p>
+<ul>
+<li><strong>GET:</strong> Read/retrieve a resource</li>
+<li><strong>POST:</strong> Create a new resource</li>
+<li><strong>PUT:</strong> Update/replace an entire resource</li>
+<li><strong>PATCH:</strong> Partially update a resource</li>
+<li><strong>DELETE:</strong> Remove a resource</li>
+</ul>
+<p>RESTful APIs are stateless — each request contains all info needed to process it.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">S11. Explain the difference between process and thread.</div><div class="q-body">
+<p class="ans">✅ Model Answer:</p>
+<p><strong>Process:</strong> An independent program in execution with its own memory space. Processes don't share memory. Inter-process communication (IPC) is needed. Heavier to create.</p>
+<p><strong>Thread:</strong> A lightweight unit of execution within a process. Threads share the same memory space. Faster to create and switch between. But shared memory means risk of race conditions.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">S12. What is the difference between TCP and UDP?</div><div class="q-body">
+<p class="ans">✅ Model Answer:</p>
+<p><strong>TCP:</strong> Connection-oriented, reliable delivery, ordered packets, error checking, slower. Used for: web browsing (HTTP), email, file transfer.</p>
+<p><strong>UDP:</strong> Connectionless, unreliable (no guarantee), no ordering, faster, lower overhead. Used for: live streaming, gaming, DNS, VoIP.</p>
+</div></div>
+
+</div>
+
+<!-- RESUME EVALUATION -->
+<div class="cat" id="resume"><div class="cat-title">📄 Resume Evaluation — Round 3 Complete Prep</div>
+<div class="cat-sub">This round is <strong>virtual</strong>. Tennr's team reviews your resume after you pass the offline assessment + AI interview. Here's exactly what they look for and how to score high.</div>
+
+<div class="alert-box alert-warn">
+<span class="alert-icon">⚠️</span>
+<div><strong style="color:var(--t)">This is a SILENT elimination round.</strong> You never get to "defend" your resume. It either passes or it doesn't. Make every bullet count.</div>
+</div>
+
+<h3 style="font-size:1rem;font-weight:700;margin:24px 0 14px;color:var(--cyan)">📊 What Evaluators Score (Estimated Weightage)</h3>
+<div class="score-grid">
+<div class="score-item"><div class="val">30%</div><div class="lbl">Projects & Tech Stack</div></div>
+<div class="score-item"><div class="val">25%</div><div class="lbl">Skills Match (JS, DSA, SQL)</div></div>
+<div class="score-item"><div class="val">20%</div><div class="lbl">Education & CGPA</div></div>
+<div class="score-item"><div class="val">15%</div><div class="lbl">Experience / Internships</div></div>
+<div class="score-item"><div class="val">10%</div><div class="lbl">Certifications & Extra</div></div>
+</div>
+
+<div class="resume-card" style="margin-top:24px">
+<h3>✅ DO's — What Makes a Resume Pass</h3>
+<ul>
+<li class="do">✅ List 2-3 projects with tech stack (HTML, CSS, JS, React, Node, etc.)</li>
+<li class="do">✅ Include GitHub link with live/deployed projects</li>
+<li class="do">✅ Mention LeetCode/HackerRank profile with problem count</li>
+<li class="do">✅ Show DSA practice explicitly: "Solved 200+ problems on LeetCode"</li>
+<li class="do">✅ Use action verbs: "Built", "Designed", "Implemented", "Optimized"</li>
+<li class="do">✅ Quantify impact: "Reduced load time by 40%", "Handled 10K+ records"</li>
+<li class="do">✅ Keep it 1 page — clean, scannable, no walls of text</li>
+<li class="do">✅ Include relevant coursework: Data Structures, DBMS, OOP, Web Dev</li>
+<li class="do">✅ List any client-facing or deployment experience (relevant to Implementation role)</li>
+<li class="do">✅ Professional email, LinkedIn link, proper formatting</li>
+</ul>
+</div>
+
+<div class="resume-card">
+<h3>❌ DON'Ts — Common Resume Killers</h3>
+<ul>
+<li class="dont">❌ Don't list every technology you've ever heard of</li>
+<li class="dont">❌ Don't use generic objective statements — "Seeking a challenging role..."</li>
+<li class="dont">❌ Don't include school marks unless exceptional</li>
+<li class="dont">❌ Don't have 2+ page resumes (freshers should always be 1 page)</li>
+<li class="dont">❌ Don't use fancy templates with graphics/photos (ATS can't read them)</li>
+<li class="dont">❌ Don't list "MS Office" or "Windows" as skills</li>
+<li class="dont">❌ Don't include personal details: DOB, father's name, passport</li>
+<li class="dont">❌ Don't have typos or grammatical errors</li>
+<li class="dont">❌ Don't copy-paste JD keywords without real experience</li>
+</ul>
+</div>
+
+<div class="resume-card">
+<h3>🎯 Tennr-Specific Resume Tips (Implementation Engineer)</h3>
+<ul>
+<li class="do">✅ Highlight any project where you integrated APIs or deployed to production</li>
+<li class="do">✅ Mention experience with data transformation/processing (relevant to healthcare data)</li>
+<li class="do">✅ Show full-stack capability: "Built frontend + backend + deployed"</li>
+<li class="do">✅ If you've worked with any CRM, EHR, or SaaS tool — mention it</li>
+<li class="do">✅ Emphasize problem-solving: "Debugged production issue in X system"</li>
+<li class="do">✅ Add a 1-line summary at top: "Software engineer with strong JS, DSA, and deployment skills"</li>
+</ul>
+</div>
+
+</div>
+
+<!-- RESUME TEMPLATE -->
+<div class="cat" id="resume-template"><div class="cat-title">📋 Resume Template — Optimized for Tennr</div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Click to see recommended resume structure <span class="q-tag t-new">TEMPLATE</span></div><div class="q-body">
+<pre style="white-space:pre-wrap;line-height:2">
+╔══════════════════════════════════════════╗
+║          YOUR NAME                       ║
+║  📧 email@gmail.com | 📱 +91-XXXXXXXXXX ║
+║  🔗 linkedin.com/in/you | github.com/you║
+╠══════════════════════════════════════════╣
+║ SUMMARY (1-2 lines)                     ║
+║ Aspiring software engineer with strong  ║
+║ skills in JavaScript, DSA, and web      ║
+║ development. Solved 200+ LeetCode       ║
+║ problems. Passionate about building     ║
+║ scalable, deployed applications.        ║
+╠══════════════════════════════════════════╣
+║ EDUCATION                               ║
+║ B.Tech CSE — [College Name] — 2025     ║
+║ CGPA: 8.2/10                           ║
+╠══════════════════════════════════════════╣
+║ SKILLS                                  ║
+║ Languages: JavaScript, Python, Java     ║
+║ Web: HTML, CSS, React, Node.js          ║
+║ DB: MySQL, MongoDB                      ║
+║ Tools: Git, Docker, VS Code, Postman    ║
+║ DSA: Arrays, Trees, Graphs, DP          ║
+╠══════════════════════════════════════════╣
+║ PROJECTS (2-3, with links)              ║
+║                                         ║
+║ 🔹 Project Name | React, Node, MongoDB ║
+║   • Built a full-stack web app that ... ║
+║   • Implemented REST API with 15+       ║
+║     endpoints handling CRUD operations  ║
+║   • Deployed on Vercel/Railway          ║
+║                                         ║
+║ 🔹 Project Name | HTML, CSS, JS        ║
+║   • Developed responsive dashboard with ║
+║     real-time data visualization        ║
+║   • Reduced page load by 35% via       ║
+║     lazy loading and code splitting     ║
+╠══════════════════════════════════════════╣
+║ CODING PROFILES                         ║
+║ LeetCode: 200+ problems solved         ║
+║ HackerRank: 5⭐ in Problem Solving     ║
+╠══════════════════════════════════════════╣
+║ CERTIFICATIONS (optional)               ║
+║ • Meta Front-End Developer (Coursera)   ║
+║ • AWS Cloud Practitioner                ║
+╚══════════════════════════════════════════╝
+</pre>
+</div></div>
+
+</div>
+
+<div style="text-align:center;margin:40px 0;padding:28px;background:var(--c);border:1px solid var(--b);border-radius:16px">
+<p style="font-size:1.2rem;font-weight:800;margin-bottom:8px">📋 Complete Coverage Across All 3 Parts</p>
+<p style="color:var(--sub);font-size:14px">Part 1: DSA MCQ (20) + Coding (10) + JS MCQ (15) + Output (5)<br>Part 2: OOP (14) + SQL (15) + HTML/CSS (12) + Aptitude (10) + Behavioral (8)<br>Part 3: Pseudo Code (15) + Subjective (12) + Resume Prep (Full Guide)</p>
+<p style="margin-top:16px">
+<a href="tennr-questions-part1.html" style="color:var(--blue);text-decoration:none;font-weight:700">← Part 1</a> &nbsp;|&nbsp;
+<a href="tennr-questions-part2.html" style="color:var(--pur);text-decoration:none;font-weight:700">← Part 2</a> &nbsp;|&nbsp;
+<a href="tennr-48hr-crashplan.html" style="color:var(--acc);text-decoration:none;font-weight:700">48hr Crash Plan →</a>
+</p>
+</div>
+
+</div>
+</body></html>

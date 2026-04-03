@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Tennr Question Bank — Part 2: OOP + SQL + HTML/CSS + Aptitude</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#050709;--s:#0b0f18;--c:#111827;--b:#1e293b;--acc:#f59e0b;--blue:#3b82f6;--grn:#22c55e;--red:#ef4444;--pur:#8b5cf6;--t:#f1f5f9;--sub:#94a3b8;--mut:#475569}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--t);line-height:1.7;padding:0 0 60px}
+.hero{text-align:center;padding:48px 20px 36px;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(139,92,246,.2),transparent 70%)}
+.hero h1{font-size:clamp(1.6rem,4vw,2.6rem);font-weight:900;background:linear-gradient(135deg,#fff,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{color:var(--sub);margin-top:8px}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+.cat{margin-top:40px}
+.cat-title{font-size:1.15rem;font-weight:800;display:flex;align-items:center;gap:10px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--b)}
+.q{background:var(--c);border:1px solid var(--b);border-radius:12px;margin-bottom:12px;overflow:hidden}
+.q-head{padding:14px 18px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:.9rem}
+.q-head:hover{background:rgba(255,255,255,.03)}
+.q-tag{font-size:10px;padding:2px 10px;border-radius:100px;font-weight:700;text-transform:uppercase;flex-shrink:0;margin-left:10px}
+.t-hot{background:rgba(239,68,68,.2);color:#fca5a5}
+.t-med{background:rgba(245,158,11,.2);color:#fcd34d}
+.t-ez{background:rgba(34,197,94,.2);color:#86efac}
+.q-body{display:none;padding:0 18px 16px;font-size:13.5px;color:var(--sub);border-top:1px solid var(--b)}
+.q-body.open{display:block}
+.q-body pre{background:var(--s);border:1px solid var(--b);border-radius:8px;padding:14px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#c9d1d9;margin:10px 0;line-height:1.8}
+.q-body ul{margin:8px 0 8px 20px}
+.q-body strong{color:var(--t)}
+.ans{color:#86efac;font-weight:600}
+.opt{margin:6px 0 6px 16px;line-height:2}
+nav{position:sticky;top:0;z-index:99;background:rgba(5,7,9,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--b);padding:10px 20px;display:flex;gap:6px;flex-wrap:wrap}
+nav a{font-size:12px;color:var(--mut);text-decoration:none;padding:5px 12px;border-radius:7px;font-weight:500}
+nav a:hover{color:var(--t);background:var(--c)}
+.nav-b{font-weight:900;color:var(--pur);margin-right:8px;font-size:13px}
+</style>
+</head>
+<body>
+<nav><span class="nav-b">📋 Part 2</span><a href="index.html">← Part 1</a><a href="#oop">OOP</a><a href="#sql">SQL</a><a href="#html">HTML/CSS</a><a href="#apt">Aptitude</a><a href="#behav">Behavioral</a><a href="tennr-questions-part3.html">→ Part 3 (NEW)</a></nav>
+<div class="hero"><h1>🔥 Tennr Question Bank</h1><p>Part 2: OOP + SQL + HTML/CSS + Aptitude + Behavioral · Click to reveal answers</p></div>
+<div class="wrap">
+
+<!-- OOP -->
+<div class="cat" id="oop"><div class="cat-title">🔷 OOP — Questions (20+)</div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q1. What are the 4 pillars of OOP? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<p class="ans">✅ Encapsulation, Abstraction, Inheritance, Polymorphism</p>
+<ul>
+<li><strong>Encapsulation:</strong> Bundling data + methods; hiding internal state (private fields)</li>
+<li><strong>Abstraction:</strong> Showing only essential features; hiding implementation details</li>
+<li><strong>Inheritance:</strong> Child class inherits parent's properties/methods → code reuse</li>
+<li><strong>Polymorphism:</strong> Same interface, different implementations</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q2. Method Overriding vs Overloading? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<ul>
+<li><strong>Overriding:</strong> Child redefines parent's method. Same name + same parameters. Runtime polymorphism.</li>
+<li><strong>Overloading:</strong> Same name, different parameters (number/type). Compile-time polymorphism.</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q3. Abstract class vs Interface? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<ul>
+<li><strong>Abstract class:</strong> Can have both abstract and concrete methods. Single inheritance. Can have constructors and instance variables.</li>
+<li><strong>Interface:</strong> All methods abstract (before Java 8). Multiple inheritance allowed. No constructors. Fields are public static final.</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q4. What is encapsulation? Give a real-world example.</div><div class="q-body">
+<p class="ans">✅ Wrapping data and methods into a single unit (class) and controlling access.</p>
+<p>Example: A bank account class — balance is private. You can only access/modify it through deposit() and withdraw() methods. You can't directly change the balance variable.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q5. What is polymorphism? Types?</div><div class="q-body">
+<p class="ans">✅ Same method name behaves differently based on the object/context.</p>
+<ul>
+<li><strong>Compile-time:</strong> Method overloading, operator overloading</li>
+<li><strong>Runtime:</strong> Method overriding (virtual functions). Decided at runtime.</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q6. What is the SOLID principle? <span class="q-tag t-med">IMP</span></div><div class="q-body">
+<ul>
+<li><strong>S</strong> — Single Responsibility: One class = one job</li>
+<li><strong>O</strong> — Open/Closed: Open for extension, closed for modification</li>
+<li><strong>L</strong> — Liskov Substitution: Subtypes must be substitutable for their base types</li>
+<li><strong>I</strong> — Interface Segregation: Many specific interfaces &gt; one fat interface</li>
+<li><strong>D</strong> — Dependency Inversion: Depend on abstractions, not concretions</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q7. What is a constructor? Can it be private?</div><div class="q-body">
+<p class="ans">✅ Special method called when object is created. Same name as class, no return type.</p>
+<p>Yes, constructor can be private — used in Singleton pattern to restrict object creation.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q8. What is the Singleton pattern? <span class="q-tag t-med">IMP</span></div><div class="q-body">
+<p class="ans">✅ Ensures only ONE instance of a class exists globally.</p>
+<p>How: Private constructor + static method that returns the single instance. Example: Database connection pool, Logger.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q9. What is the Factory pattern?</div><div class="q-body">
+<p class="ans">✅ Creates objects without specifying the exact class. A factory method decides which class to instantiate based on input.</p>
+<p>Example: ShapeFactory.create("circle") returns a Circle object.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q10. What is MVC? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<ul>
+<li><strong>Model:</strong> Data + business logic</li>
+<li><strong>View:</strong> UI / presentation layer</li>
+<li><strong>Controller:</strong> Handles user input, updates Model and View</li>
+</ul>
+<p>Separates concerns → easier to maintain and test.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q11. What is the static keyword?</div><div class="q-body">
+<p class="ans">✅ Static members belong to the CLASS, not any specific object. Shared across all instances. Accessed via ClassName.method().</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q12. What is multiple inheritance? Why is it a problem?</div><div class="q-body">
+<p class="ans">✅ A class inheriting from more than one parent. Problem: Diamond Problem — ambiguity when two parents have the same method.</p>
+<p>Java solves this by NOT allowing multiple class inheritance but allowing multiple interface implementation.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q13. Access modifiers: public, private, protected?</div><div class="q-body">
+<ul>
+<li><strong>public:</strong> Accessible everywhere</li>
+<li><strong>private:</strong> Accessible only within the same class</li>
+<li><strong>protected:</strong> Accessible within same class + subclasses</li>
+<li><strong>default (Java):</strong> Accessible within same package</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q14. What is coupling and cohesion?</div><div class="q-body">
+<ul>
+<li><strong>Coupling:</strong> How dependent two modules are. LOW coupling = good (modules are independent).</li>
+<li><strong>Cohesion:</strong> How related the responsibilities within a module are. HIGH cohesion = good (module does one thing well).</li>
+</ul>
+</div></div>
+
+</div>
+
+<!-- SQL -->
+<div class="cat" id="sql"><div class="cat-title">🗄️ SQL — Questions (20+)</div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q1. What is the difference between WHERE and HAVING? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<ul>
+<li><strong>WHERE:</strong> Filters ROWS before grouping. Cannot use aggregate functions.</li>
+<li><strong>HAVING:</strong> Filters GROUPS after GROUP BY. Can use aggregate functions.</li>
+</ul>
+<pre>SELECT dept, COUNT(*) FROM employees
+WHERE salary > 30000        -- filters rows first
+GROUP BY dept
+HAVING COUNT(*) > 5;        -- filters groups after</pre>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q2. Types of JOINs? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<ul>
+<li><strong>INNER JOIN:</strong> Only matching rows in BOTH tables</li>
+<li><strong>LEFT JOIN:</strong> ALL rows from left + matching from right (NULL if no match)</li>
+<li><strong>RIGHT JOIN:</strong> ALL rows from right + matching from left</li>
+<li><strong>FULL OUTER JOIN:</strong> All rows from both tables</li>
+<li><strong>CROSS JOIN:</strong> Cartesian product (every row × every row)</li>
+<li><strong>SELF JOIN:</strong> Table joined with itself</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q3. What is a Primary Key? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<p class="ans">✅ A column (or set of columns) that uniquely identifies each row. Must be UNIQUE and NOT NULL.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q4. Primary Key vs Foreign Key?</div><div class="q-body">
+<ul>
+<li><strong>PK:</strong> Uniquely identifies a row in THIS table</li>
+<li><strong>FK:</strong> References the PK of ANOTHER table → creates relationship between tables</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q5. What is normalization? <span class="q-tag t-med">IMP</span></div><div class="q-body">
+<p class="ans">✅ Organizing data to reduce redundancy and improve integrity.</p>
+<ul>
+<li><strong>1NF:</strong> No repeating groups. Each cell has single value.</li>
+<li><strong>2NF:</strong> 1NF + no partial dependency (all non-key columns depend on full PK)</li>
+<li><strong>3NF:</strong> 2NF + no transitive dependency (non-key depends only on PK)</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q6. DDL vs DML? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<ul>
+<li><strong>DDL (Data Definition):</strong> CREATE, ALTER, DROP, TRUNCATE → defines structure</li>
+<li><strong>DML (Data Manipulation):</strong> SELECT, INSERT, UPDATE, DELETE → manipulates data</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q7. DELETE vs TRUNCATE vs DROP?</div><div class="q-body">
+<ul>
+<li><strong>DELETE:</strong> Removes rows (with WHERE). DML. Can rollback. Slow.</li>
+<li><strong>TRUNCATE:</strong> Removes ALL rows. DDL. Cannot rollback. Fast. Resets identity.</li>
+<li><strong>DROP:</strong> Removes entire table (structure + data). DDL.</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q8. What is a subquery?</div><div class="q-body">
+<p class="ans">✅ A query nested inside another query.</p>
+<pre>SELECT name FROM employees
+WHERE dept_id IN (SELECT id FROM departments WHERE name = 'Engineering');</pre>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q9. What is GROUP BY?</div><div class="q-body">
+<p class="ans">✅ Groups rows by one or more columns for aggregate calculations.</p>
+<pre>SELECT dept, AVG(salary) FROM employees GROUP BY dept;</pre>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q10. What is an Index? Pros and cons?</div><div class="q-body">
+<ul>
+<li><strong>Pro:</strong> Speeds up SELECT/search queries dramatically</li>
+<li><strong>Con:</strong> Slows down INSERT/UPDATE/DELETE (index must be updated). Uses extra storage.</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q11. Write a query: Find the 2nd highest salary. <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<pre>SELECT MAX(salary) FROM employees
+WHERE salary &lt; (SELECT MAX(salary) FROM employees);
+
+-- OR using LIMIT/OFFSET:
+SELECT DISTINCT salary FROM employees
+ORDER BY salary DESC LIMIT 1 OFFSET 1;</pre>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q12. What are aggregate functions?</div><div class="q-body">
+<p class="ans">✅ Functions that operate on a set of rows and return a single value.</p>
+<p>COUNT(*), SUM(col), AVG(col), MAX(col), MIN(col). NULL values are ignored (except COUNT(*)).</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q13. SQL vs NoSQL? <span class="q-tag t-hot">TENNR CONFIRMED</span></div><div class="q-body">
+<ul>
+<li><strong>SQL:</strong> Relational, structured tables, ACID, schema-based (MySQL, PostgreSQL)</li>
+<li><strong>NoSQL:</strong> Non-relational, flexible schema, horizontal scaling (MongoDB, Redis, Cassandra)</li>
+<li>Use SQL for complex queries/transactions. NoSQL for scalability/unstructured data.</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q14. What is DISTINCT?</div><div class="q-body">
+<p class="ans">✅ Removes duplicate rows from the result set.</p>
+<pre>SELECT DISTINCT city FROM employees;</pre>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q15. ORDER BY ASC vs DESC?</div><div class="q-body">
+<p><strong>ASC:</strong> Ascending (default, A→Z, 1→9). <strong>DESC:</strong> Descending (Z→A, 9→1).</p>
+</div></div>
+
+</div>
+
+<!-- HTML/CSS -->
+<div class="cat" id="html"><div class="cat-title">🌐 HTML / CSS — Questions (20+)</div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q1. What is the CSS Box Model? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<p class="ans">✅ Every HTML element is a box: Content → Padding → Border → Margin (inside out).</p>
+<p>box-sizing: content-box (default, width = content only) vs border-box (width includes padding + border).</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q2. What is semantic HTML? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<p class="ans">✅ Using HTML tags that convey meaning: header, nav, main, section, article, footer.</p>
+<p>Benefits: accessibility, SEO, readability. vs non-semantic: div, span (no meaning).</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q3. Flexbox vs Grid? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<ul>
+<li><strong>Flexbox:</strong> 1-dimensional (row OR column). Use for navbars, centering.</li>
+<li><strong>Grid:</strong> 2-dimensional (rows AND columns). Use for page layouts, dashboards.</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q4. CSS Specificity order? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<p class="ans">✅ Inline styles > ID (#) > Class (.) > Tag (element) > Universal (*)</p>
+<p>!important overrides everything (but avoid in production code).</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q5. CSS position values?</div><div class="q-body">
+<ul>
+<li><strong>static:</strong> Default. Normal flow.</li>
+<li><strong>relative:</strong> Positioned relative to its normal position.</li>
+<li><strong>absolute:</strong> Positioned relative to nearest positioned ancestor.</li>
+<li><strong>fixed:</strong> Positioned relative to viewport. Stays on scroll.</li>
+<li><strong>sticky:</strong> Toggles between relative and fixed based on scroll.</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q6. Block vs Inline vs Inline-block?</div><div class="q-body">
+<ul>
+<li><strong>Block:</strong> Full width, new line (div, p, h1)</li>
+<li><strong>Inline:</strong> Only as wide as content, no width/height (span, a, strong)</li>
+<li><strong>Inline-block:</strong> Inline flow but accepts width/height</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q7. What is DOCTYPE?</div><div class="q-body">
+<p class="ans">✅ Declaration that tells the browser which version of HTML the page uses. &lt;!DOCTYPE html&gt; = HTML5.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q8. What is z-index?</div><div class="q-body">
+<p class="ans">✅ Controls stacking order of positioned elements. Higher z-index = on top. Only works on positioned elements (not static).</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q9. GET vs POST? <span class="q-tag t-med">IMP</span></div><div class="q-body">
+<ul>
+<li><strong>GET:</strong> Data in URL query string. Bookmarkable. Limited size. For reading data.</li>
+<li><strong>POST:</strong> Data in request body. Not visible in URL. No size limit. For submitting data.</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q10. What is the meta viewport tag?</div><div class="q-body">
+<p class="ans">✅ &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p>Makes the page responsive on mobile devices by setting viewport width to device width.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q11. What are pseudo-classes?</div><div class="q-body">
+<p class="ans">✅ Select elements based on state: :hover, :focus, :active, :nth-child(), :first-child, :visited</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">Q12. What is media query?</div><div class="q-body">
+<p class="ans">✅ CSS rule that applies styles based on device characteristics (width, height, orientation).</p>
+<pre>@media (max-width: 768px) {
+  .sidebar { display: none; }
+}</pre>
+</div></div>
+
+</div>
+
+<!-- APTITUDE -->
+<div class="cat" id="apt"><div class="cat-title">🧮 Aptitude — Questions (15+)</div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">A1. A is 30% more than B. B is what percent less than A?</div><div class="q-body">
+<p class="ans">✅ 23.08%</p>
+<p>If B=100, A=130. Difference = 30. Percentage less = (30/130) × 100 = 23.08%</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">A2. A can do work in 10 days, B in 15 days. Together?</div><div class="q-body">
+<p class="ans">✅ 6 days</p>
+<p>A's rate = 1/10, B's rate = 1/15. Combined = 1/10 + 1/15 = 5/30 = 1/6. Answer: 6 days.</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">A3. SI on Rs.5000 at 8% for 3 years?</div><div class="q-body">
+<p class="ans">✅ Rs.1200</p>
+<p>SI = P×R×T/100 = 5000×8×3/100 = 1200</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">A4. Speed 60 km/h. Distance 180 km. Time?</div><div class="q-body">
+<p class="ans">✅ 3 hours</p>
+<p>Time = Distance/Speed = 180/60 = 3 hours</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">A5. A:B = 3:5, B:C = 2:3. Find A:B:C?</div><div class="q-body">
+<p class="ans">✅ 6:10:15</p>
+<p>Make B common: A:B = 6:10, B:C = 10:15. So A:B:C = 6:10:15</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">A6. CP = Rs.1500, SP = Rs.1800. Profit %?</div><div class="q-body">
+<p class="ans">✅ 20%</p>
+<p>Profit = 300. Profit% = (300/1500)×100 = 20%</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">A7. Average of 5,10,15,20,25?</div><div class="q-body">
+<p class="ans">✅ 15</p>
+<p>Sum = 75. Average = 75/5 = 15</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">A8. A train 200m long passes a pole in 10s. Speed?</div><div class="q-body">
+<p class="ans">✅ 20 m/s = 72 km/h</p>
+<p>Speed = Distance/Time = 200/10 = 20 m/s. ×3.6 = 72 km/h</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">A9. What comes next: 2, 6, 12, 20, 30, ?</div><div class="q-body">
+<p class="ans">✅ 42</p>
+<p>Differences: 4, 6, 8, 10, 12. Pattern: n×(n+1) → 6×7 = 42</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">A10. Two pipes fill tank in 3h and 6h. Together?</div><div class="q-body">
+<p class="ans">✅ 2 hours</p>
+<p>Rate: 1/3 + 1/6 = 3/6 = 1/2. Time = 2 hours.</p>
+</div></div>
+
+</div>
+
+<!-- BEHAVIORAL -->
+<div class="cat" id="behav"><div class="cat-title">🎤 Behavioral / AI Interview Questions (Confirmed)</div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">B1. Tell me about yourself (60-sec script) <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<p><strong>Template:</strong> "Hi, I'm [Name], a [Year] graduate in [Branch] from [College]. I'm passionate about building web applications using HTML, CSS, JavaScript, and I've been actively practicing DSA on LeetCode. My strongest project is [Project Name] where I [built what + tech stack]. I'm excited about this role at Tennr because it combines software engineering with real-world implementation in healthcare, which aligns with my interest in building impactful products."</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">B2. Why Tennr? <span class="q-tag t-hot">HOT</span></div><div class="q-body">
+<p>"Tennr is solving a real problem in healthcare — automating fax-based paperwork that wastes thousands of hours. I'm drawn to the Implementation Engineer role because it's not just about writing code, it's about deploying solutions that directly impact healthcare providers. I want to work at the intersection of engineering and real-world impact."</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">B3. What is your biggest strength?</div><div class="q-body">
+<p>"I'm a fast learner who can quickly pick up new technologies. In my project [X], I learned [tech] from scratch in [time] and delivered a working product."</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">B4. Tell me about a challenging project.</div><div class="q-body">
+<p>Use STAR format: <strong>Situation</strong> (what was the project) → <strong>Task</strong> (what was hard) → <strong>Action</strong> (what you did) → <strong>Result</strong> (what happened).</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">B5. How do you handle unfamiliar technology?</div><div class="q-body">
+<p>"I start with official docs, build a small proof-of-concept, and iterate. I believe the best way to learn is by building. For example, when I needed to learn [tech], I..."</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">B6. Why Implementation Engineer and not pure SDE?</div><div class="q-body">
+<p>"I enjoy the full lifecycle — not just writing code but seeing it deployed and used by real people. Implementation requires understanding the client's needs, configuring the system, and ensuring it works in production. That end-to-end ownership excites me."</p>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">B7. Docker vs Virtual Machine? <span class="q-tag t-hot">TENNR CONFIRMED</span></div><div class="q-body">
+<ul>
+<li><strong>Docker:</strong> Lightweight containers sharing host OS kernel. Fast startup. Less isolation.</li>
+<li><strong>VM:</strong> Full OS with hypervisor. More isolation. Heavy, slow startup.</li>
+<li>Containers for microservices; VMs for full OS-level isolation.</li>
+</ul>
+</div></div>
+
+<div class="q"><div class="q-head" onclick="this.nextElementSibling.classList.toggle('open')">B8. Design a Rate Limiter (High Level) <span class="q-tag t-hot">TENNR CONFIRMED</span></div><div class="q-body">
+<p><strong>Purpose:</strong> Limit how many requests a user/IP can make in a time window.</p>
+<ul>
+<li><strong>Algorithm:</strong> Token Bucket or Sliding Window Counter</li>
+<li><strong>Storage:</strong> Redis (in-memory, fast, supports TTL)</li>
+<li><strong>Key:</strong> user_id or IP address. Value: request count + timestamp</li>
+<li><strong>Response:</strong> 429 Too Many Requests when limit exceeded</li>
+<li><strong>Scale:</strong> Use distributed Redis for multi-server setup</li>
+</ul>
+</div></div>
+
+</div>
+
+<div style="text-align:center;margin:40px 0;padding:28px;background:var(--c);border:1px solid var(--b);border-radius:16px">
+<p style="font-size:1.2rem;font-weight:800;margin-bottom:8px">📋 Total Questions: 100+</p>
+<p style="color:var(--sub);font-size:14px">DSA MCQ (20) + DSA Coding (10) + JS MCQ (15) + JS Output (5) + OOP (14) + SQL (15) + HTML/CSS (12) + Aptitude (10) + Behavioral (8)</p>
+<p style="margin-top:16px"><a href="tennr-questions-part1.html" style="color:var(--blue);text-decoration:none;font-weight:700">← Back to Part 1</a> &nbsp;|&nbsp; <a href="tennr-questions-part3.html" style="color:var(--cyan,#06b6d4);text-decoration:none;font-weight:700">Part 3: Pseudo + Resume →</a> &nbsp;|&nbsp; <a href="tennr-48hr-crashplan.html" style="color:var(--acc);text-decoration:none;font-weight:700">48hr Crash Plan →</a></p>
+</div>
+
+</div>
+</body></html>
